@@ -1,16 +1,16 @@
-# An Ubuntu docker image running BiglyBT with openvpn
+# An Ubuntu docker image running BiglyBT 3.2.0.0 with Extreme Mod
 
 ## Base Docker Image
 [fullaxx/ubuntu-desktop](https://hub.docker.com/r/fullaxx/ubuntu-desktop)
 
 ## Software
-* [BiglyBT](https://www.biglybt.com/) - A java-based bittorrent application
+* [BiglyBT 3.2.0.0](https://www.biglybt.com/) - A java-based bittorrent application
 * [openvpn](https://openvpn.net/)
+* [Extreme Mod] (https://www.sb-innovation.de/showthread.php?35331-BiglyBT-Extreme-Mod-by-SB-Innovation-3-2-0-0-Beta)
 
 ## Get the image from Docker Hub or build it locally
 ```
-docker pull fullaxx/biglybt
-docker build -t="fullaxx/biglybt" github.com/Fullaxx/biglybt
+docker build -t="fullaxx/biglybt-3.2.0.0-extreme" github.com/Fullaxx/biglybt#3.2.0.0-extreme
 ```
 
 ## Volume Options
