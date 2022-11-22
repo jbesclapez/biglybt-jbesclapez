@@ -8,9 +8,10 @@
 * [openvpn](https://openvpn.net/)
 * [Extreme Mod](https://www.sb-innovation.de/showthread.php?35331-BiglyBT-Extreme-Mod-by-SB-Innovation-3-2-0-0-Beta)
 
-## Build the image
+## Get the image from Docker Hub or build it locally
 ```
-docker build -t="fullaxx/biglybt-3.2.0.0-extreme" github.com/Fullaxx/biglybt#3.2.0.0-extreme
+docker pull fullaxx/biglybt:3.2.0.0-extreme
+docker build -t="fullaxx/biglybt:3.2.0.0-extreme" github.com/Fullaxx/biglybt#3.2.0.0-extreme
 ```
 
 ## Volume Options
