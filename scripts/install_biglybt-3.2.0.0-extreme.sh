@@ -2,7 +2,7 @@
 
 set -e
 
-BBTJAVAVERS=${BBTJAVAVERS:-11}
+BBTJAVAVERS=${BBTJAVAVERS:-17}
 export DEBIAN_FRONTEND="noninteractive"
 export BBTINSTSCR="/app/BiglyBT_Installer.sh"
 
@@ -13,13 +13,13 @@ else
 fi
 
 apt-get update
-apt-get install -y --no-install-recommends openjdk-${BBTJAVAVERS}-jre-headless webkit2gtk-driver libjna-java unzip
-if grep -q '^assistive_technologies' /etc/java-${BBTJAVAVERS}-openjdk/accessibility.properties; then
-  sed -e 's/^assistive_technologies/#assistive_technologies/' -i /etc/java-${BBTJAVAVERS}-openjdk/accessibility.properties
+apt-get install -y --no-install-recommends openjdk-17-jre-headless webkit2gtk-driver libjna-java unzip
+if grep -q '^assistive_technologies' /etc/java-17-openjdk/accessibility.properties; then
+  sed -e 's/^assistive_technologies/#assistive_technologies/' -i /etc/java-17-openjdk/accessibility.properties
 fi
 
 chown ${SUDO_UID}:${SUDO_GID} /opt
-sudo -u ${SUDO_USER} app_java_home="/usr/lib/jvm/java-${BBTJAVAVERS}-openjdk-amd64/" ${BBTINSTSCR} ${BBTAUTOINST} -dir /opt/biglybt
+sudo -u ${SUDO_USER} app_java_home="/usr/lib/jvm/java-17-openjdk-amd64/" ${BBTINSTSCR} ${BBTAUTOINST} -dir /opt/biglybt
 
 # Install BiglyBT_3.2.0.0_20221014.zip
 ( set -e; cd /opt/biglybt; unzip -o /app/BiglyBT_3.2.0.0_20221014.zip )
